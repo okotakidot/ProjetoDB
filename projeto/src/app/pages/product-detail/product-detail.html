@@ -1,0 +1,21 @@
+<main class="product-detail">
+	<div class="detail-grid">
+		<div class="image-wrap">
+			<img [src]="produto?.imagem" [alt]="produto?.nome" />
+		</div>
+
+		<div class="info-wrap">
+			<h1 class="title">{{ produto?.nome }}</h1>
+
+			<div class="description">
+				<p>{{ produto?.descricao }}</p>
+			</div>
+
+            <div class="price-buy">
+				<div class="price">{{ produto?.preco | currency:'BRL' }}</div>
+				<button class="buy" type="button" (click)="comprar()">COMPRAR</button>
+			</div>
+
+		</div>
+	</div>
+</main>

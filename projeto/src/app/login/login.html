@@ -1,0 +1,87 @@
+<div class="login-page">
+
+  <div class="login-content">
+
+    <!-- FORMULÁRIO -->
+    <div class="login-form-area">
+
+      <h1>Login</h1>
+
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="entrar()"
+      >
+
+        <div class="input-group">
+
+          <span class="input-icon">✉</span>
+
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Digite seu email"
+            autocomplete="email"
+          >
+
+        </div>
+
+        @if (
+          loginForm.controls.email.touched &&
+          loginForm.controls.email.invalid
+        ) {
+          <small class="erro">
+            Digite um e-mail válido.
+          </small>
+        }
+
+
+        <div class="input-group">
+
+          <span class="input-icon">🔒</span>
+
+          <input
+            type="password"
+            formControlName="senha"
+            placeholder="digite sua senha"
+            autocomplete="current-password"
+          >
+
+        </div>
+
+        @if (
+          loginForm.controls.senha.touched &&
+          loginForm.controls.senha.invalid
+        ) {
+          <small class="erro">
+            Digite sua senha.
+          </small>
+        }
+
+
+        <a routerLink="/recuperar-senha" class="forgot-password">
+          Esqueci senha
+        </a>
+
+
+        <button type="submit">
+          LOGIN
+        </button>
+
+      </form>
+
+    </div>
+
+
+    <!-- IMAGEM -->
+    <div class="login-image-area">
+
+      <img
+        src="/img/animal.png"
+        alt="Cachorro e gato"
+      >
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,49 @@
+<div class="recuperar-page">
+
+  <div class="recuperar-card">
+
+    <h1>Recuperar senha</h1>
+
+    <p>
+      Digite o e-mail cadastrado para recuperar sua senha.
+    </p>
+
+    <form
+      [formGroup]="recuperarForm"
+      (ngSubmit)="recuperarSenha()"
+    >
+
+      <div class="input-group">
+
+        <span class="input-icon">✉</span>
+
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="Digite seu email"
+        >
+
+      </div>
+
+      @if (
+        recuperarForm.controls.email.touched &&
+        recuperarForm.controls.email.invalid
+      ) {
+        <small class="erro">
+          Digite um e-mail válido.
+        </small>
+      }
+
+      <button type="submit">
+        RECUPERAR SENHA
+      </button>
+
+    </form>
+
+    <a routerLink="/login" class="voltar">
+      ← Voltar para o login
+    </a>
+
+  </div>
+
+</div>

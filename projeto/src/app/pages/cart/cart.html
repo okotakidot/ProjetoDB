@@ -1,0 +1,39 @@
+<main class="cart-page">
+
+  <h1>Carrinho</h1>
+
+  <section class="cart-list">
+
+    @for (item of items; track item.produto.id) {
+
+      <article class="cart-item">
+        <img src="{{ item.produto.imagem }}" alt="{{ item.produto.nome }}" />
+
+        <div class="info">
+          <h2>{{ item.produto.nome }}</h2>
+          <p>{{ item.produto.descricao }}</p>
+          <strong>{{ item.produto.preco | currency:'BRL' }}</strong>
+        </div>
+
+        <div class="controls">
+          <button type="button" (click)="decrementar(item)">-</button>
+          <span>{{ item.quantidade }}</span>
+          <button type="button" (click)="incrementar(item)">+</button>
+        </div>
+
+        <div class="remove">
+          <button type="button" (click)="remover(item)">Remover</button>
+        </div>
+
+      </article>
+
+    }
+
+  </section>
+
+  <aside class="summary">
+    <p>Subtotal: <strong>{{ subtotal() | currency:'BRL' }}</strong></p>
+    <button class="finalize" type="button" (click)="finalizar()">Finalizar Compra</button>
+  </aside>
+
+</main>

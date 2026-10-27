@@ -1,0 +1,69 @@
+<header class="app-header">
+
+	<div class="logo">
+		<img src="/icon/icon.png" alt="Icon" class="logo-icon" />
+		Happy Pet
+	</div>
+
+	<nav class="main-nav">
+
+		<a routerLink="/">
+			Home
+		</a>
+
+		@if (!logado) {
+
+		<a routerLink="/login">
+			Login
+		</a>
+
+		<a routerLink="/cadastro">
+			Sign in
+		</a>
+
+		}
+
+		@if (logado) {
+
+		<button type="button" class="logout-button" (click)="sair()">
+			<span>↪</span>
+			Sair
+		</button>
+
+		}
+
+	</nav>
+
+	<nav class="header-actions">
+	
+		<a type="link" routerLink="/cart" class="cart-link" aria-label="Ver carrinho">
+			🛒<span class="cart-count">{{ carrinhoItemCount() }}</span>
+		</a>
+
+		<a type="link" routerLink="/favoritos" class="favorite-link" aria-label="Ver favoritos">
+			❤️ Favoritos
+		</a>
+
+	</nav>
+
+</header>
+
+
+@if (mensagem()) {
+
+<div class="notificacao">
+
+	<span class="notificacao-icone">
+		<img src="/icon/icon.png" alt="Icon" class="logo-icon" />
+	</span>
+
+	<span>
+		{{ mensagem() }}
+	</span>
+
+</div>
+
+}
+
+
+<router-outlet />

@@ -1,0 +1,38 @@
+<div class="favoritos-page">
+
+  <div class="favoritos-header">
+    <h1>Meus Favoritos</h1>
+    <p>Confira os produtos que você marcou como favoritos.</p>
+  </div>
+
+  @if (produtos.length > 0) {
+
+    <div class="produtos-grid">
+      @for (produto of produtos; track produto.id) {
+
+        <app-product-card
+          [produto]="produto"
+          (favoritoAlterado)="atualizarFavorito($event)"
+          (adicionar)="adicionarAoCarrinho($event)"
+          (ver)="verProduto($event)">
+        </app-product-card>
+
+      }
+    </div>
+
+  } @else {
+
+    <div class="sem-favoritos">
+      <h2>Nenhum favorito ainda ❤️</h2>
+      <p>
+        Você ainda não adicionou nenhum produto aos favoritos.
+      </p>
+
+      <button type="button" (click)="router.navigate(['/'])">
+        VER PRODUTOS
+      </button>
+    </div>
+
+  }
+
+</div>

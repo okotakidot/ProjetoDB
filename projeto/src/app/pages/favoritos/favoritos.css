@@ -1,0 +1,46 @@
+.favoritos-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.favoritos-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.favoritos-header h1 {
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+.favoritos-header p {
+  color: #666;
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.sem-favoritos {
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.sem-favoritos h2 {
+  margin-bottom: 15px;
+}
+
+.sem-favoritos p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.sem-favoritos button {
+  border: none;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: bold;
+}

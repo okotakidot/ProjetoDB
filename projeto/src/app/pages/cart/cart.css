@@ -1,0 +1,152 @@
+/* Layout container */
+* {
+ 	box-sizing: border-box;
+ 	margin: 0;
+ 	padding: 0;
+ 	
+}
+
+.cart-page {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 28px;
+  padding: 28px;
+  align-items: start;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  background: #ff9a42;
+  color: #111;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.cart-item img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: white;
+}
+
+.cart-item .info {
+  flex: 1;
+}
+
+.cart-item .info h2 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.cart-item .info p {
+  margin: 0 0 8px 0;
+  color: rgba(0,0,0,0.6);
+}
+
+.cart-item .controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-item .controls button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.08);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.cart-item .remove button {
+  background: transparent;
+  color: rgba(0,0,0,0.6);
+  border: none;
+  cursor: pointer;
+}
+
+.summary {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.summary p { margin: 0; }
+
+.finalize {
+  background: #ff8738;
+  color: white;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+@media (max-width: 800px) {
+  .cart-page { grid-template-columns: 1fr; }
+}
+
+/* ========================================= */
+/*                  TABLET                  */
+/* ========================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cart-page {
+    grid-template-columns: 1fr 280px;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .cart-item img {
+    width: 100px;
+    height: 75px;
+  }
+
+  .summary {
+    padding: 16px;
+  }
+}
+
+/* ========================================= */
+/*                  CELULAR                  */
+/* ========================================= */
+
+@media (max-width: 767px) {
+  .cart-page {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .summary {
+    padding: 12px;
+  }
+}
